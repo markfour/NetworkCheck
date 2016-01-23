@@ -11,7 +11,18 @@ import UIKit
 class ViewController: UIViewController {
 
   @IBAction func onTcpTap(sender: AnyObject) {
+    print("")
     
+    guard let url = NSURL(string: "http://127.0.0.1:80") else { return }
+    let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+    let task = session.dataTaskWithURL(url, completionHandler: {
+      (data, resp, err) in
+      print(data)
+      print(resp)
+      print(err)
+    })
+    
+    task.resume()
   }
   override func viewDidLoad() {
     super.viewDidLoad()
