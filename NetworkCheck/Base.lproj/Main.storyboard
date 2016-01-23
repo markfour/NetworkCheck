@@ -20,18 +20,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3SD-fr-6cl">
                                 <rect key="frame" x="0.0" y="540" width="600" height="60"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKC-cJ-cuX">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iKC-cJ-cuX">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd3-ql-4zJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="569" height="60"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd3-ql-4zJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
                                                 <state key="normal" title="TCP"/>
                                                 <connections>
                                                     <action selector="onTcpTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ssE-yn-FYi"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rW-tj-j8A">
-                                                <rect key="frame" x="569" y="0.0" width="31" height="60"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0rW-tj-j8A">
+                                                <rect key="frame" x="300" y="0.0" width="300" height="60"/>
                                                 <state key="normal" title="UDP"/>
                                             </button>
                                         </subviews>
@@ -64,18 +64,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GaI-Z6-JdV">
+                                <rect key="frame" x="8" y="120" width="584" height="400"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MKm-wl-b84" firstAttribute="leading" secondItem="IcU-VB-Tv3" secondAttribute="trailing" constant="32" id="6ga-qR-2RO"/>
                             <constraint firstItem="3SD-fr-6cl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="97i-jS-IBm"/>
+                            <constraint firstItem="3SD-fr-6cl" firstAttribute="top" secondItem="GaI-Z6-JdV" secondAttribute="bottom" constant="20" id="ESl-aS-n0W"/>
+                            <constraint firstAttribute="trailing" secondItem="GaI-Z6-JdV" secondAttribute="trailing" constant="8" id="WgU-nF-mEi"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3SD-fr-6cl" secondAttribute="bottom" id="a1q-Iw-0ze"/>
+                            <constraint firstItem="GaI-Z6-JdV" firstAttribute="top" secondItem="MKm-wl-b84" secondAttribute="bottom" constant="20" id="fW8-7e-dIF"/>
                             <constraint firstItem="IcU-VB-Tv3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="gYf-Er-Cv6"/>
                             <constraint firstAttribute="trailing" secondItem="3SD-fr-6cl" secondAttribute="trailing" id="hCM-YB-I3t"/>
                             <constraint firstItem="IcU-VB-Tv3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="o20-N9-xZr"/>
+                            <constraint firstItem="GaI-Z6-JdV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="ovQ-Ki-MSO"/>
                             <constraint firstItem="MKm-wl-b84" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="ywr-FX-0e5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultTextView" destination="GaI-Z6-JdV" id="NPl-OE-ogw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

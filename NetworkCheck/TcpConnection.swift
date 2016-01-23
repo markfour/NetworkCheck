@@ -8,7 +8,7 @@
 
 import Foundation
 
-class TcpConnection: NSObject {
+struct TcpConnection {
   
   func connection() {
     

@@ -9,31 +9,47 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-  @IBAction func onTcpTap(sender: AnyObject) {
-    print("")
-    
+  @IBOutlet weak var resultTextView: UITextView!
+  
+  var output = ""
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+  
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+  }
+  
+  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    view.endEditing(true)
+  }
+  
+  func testURLSession() {
+    // TODO use ATS
     guard let url = NSURL(string: "http://127.0.0.1:80") else { return }
     let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
     let task = session.dataTaskWithURL(url, completionHandler: {
       (data, resp, err) in
-      print(data)
-      print(resp)
-      print(err)
+      
+      guard let data = data else { return }
+      guard let out = NSString(data:data, encoding:NSUTF8StringEncoding) else { return }
+      guard let description = resp?.description else { return }
+      
+      self.output = out as String
+      self.output += "\n"
+      self.output += description
+      
+      dispatch_async(dispatch_get_main_queue(), { () -> Void in
+        self.resultTextView.text = self.output
+      })
     })
     
     task.resume()
   }
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+  
+  @IBAction func onTcpTap(sender: AnyObject) {
+    testURLSession()
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
-
 }
 
