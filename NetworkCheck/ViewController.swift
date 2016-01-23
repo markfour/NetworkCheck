@@ -31,18 +31,19 @@ class ViewController: UIViewController {
     let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
     let task = session.dataTaskWithURL(url, completionHandler: {
       (data, resp, err) in
+      // TODO add display error
       
       guard let data = data else { return }
-      guard let out = NSString(data:data, encoding:NSUTF8StringEncoding) else { return }
+      guard let body = NSString(data:data, encoding:NSUTF8StringEncoding) else { return }
       guard let description = resp?.description else { return }
       
-      self.output = out as String
+      self.output = body as String
       self.output += "\n"
       self.output += description
       
-      dispatch_async(dispatch_get_main_queue(), { () -> Void in
+      dispatch_async(dispatch_get_main_queue()) {
         self.resultTextView.text = self.output
-      })
+      }
     })
     
     task.resume()
