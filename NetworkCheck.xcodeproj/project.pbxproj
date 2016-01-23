@@ -14,6 +14,7 @@
 		C488E9FD1C534468001C2A87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C488E9FB1C534468001C2A87 /* LaunchScreen.storyboard */; };
 		C488EA081C534468001C2A87 /* NetworkCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C488EA071C534468001C2A87 /* NetworkCheckTests.swift */; };
 		C488EA131C534468001C2A87 /* NetworkCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C488EA121C534468001C2A87 /* NetworkCheckUITests.swift */; };
+		C488EA211C534916001C2A87 /* TcpConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C488EA201C534916001C2A87 /* TcpConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		C488EA0E1C534468001C2A87 /* NetworkCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C488EA121C534468001C2A87 /* NetworkCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheckUITests.swift; sourceTree = "<group>"; };
 		C488EA141C534468001C2A87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C488EA201C534916001C2A87 /* TcpConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TcpConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				C488E9F21C534467001C2A87 /* AppDelegate.swift */,
-				C488E9F41C534467001C2A87 /* ViewController.swift */,
-				C488E9F61C534468001C2A87 /* Main.storyboard */,
 				C488E9F91C534468001C2A87 /* Assets.xcassets */,
-				C488E9FB1C534468001C2A87 /* LaunchScreen.storyboard */,
 				C488E9FE1C534468001C2A87 /* Info.plist */,
+				C488E9FB1C534468001C2A87 /* LaunchScreen.storyboard */,
+				C488E9F61C534468001C2A87 /* Main.storyboard */,
+				C488EA201C534916001C2A87 /* TcpConnection.swift */,
+				C488E9F41C534467001C2A87 /* ViewController.swift */,
 			);
 			path = NetworkCheck;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C488E9F51C534467001C2A87 /* ViewController.swift in Sources */,
+				C488EA211C534916001C2A87 /* TcpConnection.swift in Sources */,
 				C488E9F31C534467001C2A87 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +486,7 @@
 				C488EA191C534468001C2A87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C488EA1A1C534468001C2A87 /* Build configuration list for PBXNativeTarget "NetworkCheckTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +495,7 @@
 				C488EA1C1C534468001C2A87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C488EA1D1C534468001C2A87 /* Build configuration list for PBXNativeTarget "NetworkCheckUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +504,7 @@
 				C488EA1F1C534468001C2A87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
